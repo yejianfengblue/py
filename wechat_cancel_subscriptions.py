@@ -22,10 +22,10 @@ while True:
         driver.find_element(MobileBy.ANDROID_UIAUTOMATOR, value='new UiSelector().textMatches("不再关注")').click()
         sleep(1)
         driver.find_element(MobileBy.ANDROID_UIAUTOMATOR, value='new UiSelector().textMatches("不再关注")').click()
-        sleep(1)
+        sleep(5)
     except NoSuchElementException as e:
         print(e)
-        driver.page_source
+        print(driver.page_source)
     
 # references    
 # https://developer.android.com/reference/android/support/test/uiautomator/UiSelector#textmatches
