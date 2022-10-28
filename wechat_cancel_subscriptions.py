@@ -13,10 +13,13 @@ options.new_command_timeout=600
 driver = webdriver.Remote('http://127.0.0.1:4723', options=options)
 
 while True:
-    account = driver.find_element(AppiumBy.ID, value='com.tencent.mm:id/aip')
+    account = driver.find_element(MobileBy.ID, value='com.tencent.mm:id/aip')
     TouchAction(driver).long_press(account).perform()
     sleep(1)
     driver.find_element(MobileBy.ANDROID_UIAUTOMATOR, value='new UiSelector().textMatches("不再关注")').click()
     sleep(1)
     driver.find_element(MobileBy.ANDROID_UIAUTOMATOR, value='new UiSelector().textMatches("不再关注")').click()
     sleep(1)
+    
+# references    
+# https://developer.android.com/reference/android/support/test/uiautomator/UiSelector#textmatches
